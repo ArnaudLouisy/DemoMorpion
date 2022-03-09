@@ -28,6 +28,9 @@ public class Morpion implements Initializable {
     void OnClickLabel(MouseEvent event) {
         Label label = (Label) event.getSource();
         label.setText(symbol);
+        if(label.getText().isEmpty());{
+
+
         if (symbol.equals(("X"))) {
             symbol = "O";
             this.lblJoueur.setText(this.Joueurdeux);
@@ -37,9 +40,14 @@ public class Morpion implements Initializable {
             this.lblJoueur.setText(this.Joueurun);
             listeCoups.getItems().add(Joueurdeux+"a fais un coup");
         }
+        }else{
 
-    }
-c
+        }
+
+        }
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblJoueur.setText(Joueurun);
