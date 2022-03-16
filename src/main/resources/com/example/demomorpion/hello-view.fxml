@@ -21,5 +21,5 @@
    <TextField fx:id="Joueurun" />
    <Label prefHeight="21.0" prefWidth="61.0" text="Joueur 2 : " />
    <TextField fx:id="Joueurdeux" />
-   <Button fx:id="boutton" layoutX="191.0" layoutY="298.0" mnemonicParsing="false" onAction="#nouvellepartie" prefHeight="54.0" prefWidth="100.0" text="Button" />
+   <Button fx:id="boutton" layoutX="191.0" layoutY="298.0" mnemonicParsing="false" onAction="#nouvellepartie" prefHeight="54.0" prefWidth="100.0" text="Jouez ! " />
 </VBox>

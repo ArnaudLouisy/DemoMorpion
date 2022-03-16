@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,6 +21,18 @@ public class Morpion implements Initializable {
     @FXML
     private GridPane maGrid;
 
+    private int[][][] testVictoire = {
+            {{0,0},{0,1},{0,2}},
+            {{1,0},{1,1},{1,2}},
+            {{2,0},{2,1},{2,2}},
+            {{0,0},{1,0},{2,0}},
+            {{0,1},{1,1},{2,1}},
+            {{0,2},{1,2},{2,2}},
+            {{0,0},{1,1},{2,2}},
+            {{0,2},{1,1},{2,0}},
+
+    };
+
     public Morpion(String joueurun, String joueurdeux) {
         Joueurun = joueurun;
         Joueurdeux = joueurdeux;
@@ -31,9 +42,8 @@ public class Morpion implements Initializable {
     @FXML
     void OnClickLabel(MouseEvent event) {
         Label label = (Label) event.getSource();
-        if (lblJoueur.getText().isBlank())
-        label.setText(symbol);
 
+        label.setText(symbol);
         if (symbol.equals(("X"))) {
             symbol = "O";
             this.lblJoueur.setText(this.Joueurdeux);
@@ -44,9 +54,15 @@ public class Morpion implements Initializable {
             listeCoups.getItems().add(Joueurdeux+"a fais un coup");
         }
     }
+
 //ajout de victoire
 
-
+private  boolean checkVictoire(){
+        for (int i = 0 ; i< testVictoire.length; i++){
+            if(getNodeFromGrindidPane(testVictoire[i][0][0],testVictoire[i][0][1]).getText())
+        }
+return  false;
+    }
 
 
 
@@ -68,7 +84,3 @@ public class Morpion implements Initializable {
         return null;
     }
 }
-
-
-
-
